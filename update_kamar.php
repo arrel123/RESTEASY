@@ -5,6 +5,21 @@
 // Dibuat Oleh : Windy Yohana Gurning (NIM: 3312401066) & Rafi Akhbar Dirgahayuri (NIM: 3312401065)
 // Tanggal Dibuat : 18 November 2024 - 29 Desember 2024
 
+/*
+Pseudocode:
+
+1. Mulai
+2. Cek jika metode request adalah POST (form dikirim):
+    2.1 Ambil data input dari form (id, tipe, kasur, fasilitas, harga, rekomendasi, tersedia)
+    2.2 Cek jika ada gambar baru yang diunggah:
+        2.2.1 Jika ada gambar baru, pindahkan gambar tersebut ke folder 'images' dan buat query update dengan nama gambar yang baru
+        2.2.2 Jika tidak ada gambar baru, buat query update tanpa perubahan pada gambar
+    2.3 Eksekusi query update untuk memperbarui data kamar di database
+    2.4 Jika query berhasil, arahkan ke halaman 'data_kamar.php'
+    2.5 Jika query gagal, tampilkan pesan error
+3. Akhiri
+*/
+
 include 'koneksi.php';
 
 // Memeriksa apakah data form dikirim menggunakan metode POSTs
