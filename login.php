@@ -4,6 +4,40 @@
 // Dibuat Oleh : Rafi Akhbar Dirgahayuri (NIM: 3312401065)
 // Tanggal Dibuat : 18 November - 29 Desember 2024
 
+/*
+Pseudocode:
+1. Mulai
+2. Inisialisasi:
+    - Mulai sesi dengan session_start()
+    - Sertakan koneksi ke database dengan include 'koneksi.php'
+    - Tentukan variabel $error sebagai string kosong untuk menyimpan pesan error
+
+3. Proses Formulir Login:
+    - Jika metode request adalah POST:
+        - Ambil nilai email dan password dari form input
+        - Amankan nilai email dengan mysqli_real_escape_string() untuk mencegah SQL injection
+
+4. Query Database:
+    - Lakukan query untuk mencari pengguna berdasarkan email yang dimasukkan
+    - Jika query gagal, tampilkan error dan hentikan eksekusi
+    - Jika query berhasil, periksa apakah ada hasil yang ditemukan
+
+5. Verifikasi Email dan Password:
+    - Jika email ditemukan dalam database:
+        - Ambil data pengguna dari hasil query
+        - Verifikasi password yang dimasukkan dengan password_verify()
+        - Jika password benar:
+            - Simpan email dan role pengguna ke dalam session ($_SESSION['email'], $_SESSION['role'])
+            - Arahkan pengguna ke halaman dashboard yang sesuai dengan role (admin atau pelanggan)
+            - Hentikan eksekusi
+        - Jika password salah, tampilkan pesan error "Password Anda salah!"
+    
+6. Tampilan Pesan Error:
+    - Jika email tidak ditemukan di database, tampilkan pesan error "Email tidak ditemukan!"
+
+7. Akhiri
+*/
+
 session_start();
 include 'koneksi.php';
 
