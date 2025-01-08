@@ -4,6 +4,26 @@
 // Dibuat Oleh : Rafi Akhbar Dirgahayuri (NIM: 3312401065)
 // Tanggal Dibuat : 18 November 2024 - 29 Desember 2024
 
+/*
+Pseudocode:
+
+1. Mulai
+2. Jika metode request adalah POST (form dikirim):
+    2.1 Ambil inputan pengguna dari form (email, nomor, password, confirmPassword)
+    2.2 Validasi input:
+        2.2.1 Jika ada field kosong, tampilkan pesan error "Semua field wajib diisi!"
+        2.2.2 Jika email tidak valid, tampilkan pesan error "Email tidak valid!"
+        2.2.3 Jika nomor telepon tidak valid (bukan angka atau panjangnya tidak sesuai), tampilkan pesan error "Nomor telepon tidak valid!"
+        2.2.4 Jika password dan konfirmasi password tidak cocok, tampilkan pesan error "Password dan konfirmasi password tidak cocok!"
+    2.3 Cek jika email atau nomor sudah terdaftar di database:
+        2.3.1 Jika email atau nomor terdaftar, tampilkan pesan error yang sesuai (misalnya, "Email sudah terdaftar!" atau "Nomor HP sudah terdaftar!")
+    2.4 Jika semua validasi berhasil, lakukan hashing pada password
+    2.5 Simpan data pengguna baru ke database
+    2.6 Jika registrasi berhasil, tampilkan pesan sukses dan arahkan pengguna ke halaman login
+    2.7 Jika registrasi gagal, tampilkan pesan error
+3. Akhiri
+*/
+
 include 'koneksi.php'; 
 
 // Mengecek jika form dikirim menggunakan metode POST
