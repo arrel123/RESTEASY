@@ -4,6 +4,30 @@
 // Dibuat Oleh : Melanie Putri (NIM: 3312401075) & Rafi Akhbar Dirgahayuri (NIM: 3312401065)
 // Tanggal Dibuat : 18 November 2024 - 29 Desember 2024
 
+/*
+PSEUDOCODE:
+
+Mulai
+1. Mulai sesi dengan `session_start()`.
+2. Periksa apakah pengguna sudah login dan memiliki peran sebagai 'admin':
+   - Jika tidak login atau peran bukan 'admin', arahkan pengguna ke halaman login dan hentikan eksekusi.
+3. Hubungkan ke database menggunakan file 'koneksi.php'.
+4. Ambil semua data pengguna dengan peran 'pelanggan' dari tabel `users` di database.
+5. Tampilkan data pelanggan dalam tabel HTML dengan struktur berikut:
+   - Kolom: NO, EMAIL, NAMA CUSTOMER, ALAMAT, NO HANDPHONE.
+   - Setiap baris data pelanggan diambil dari hasil query database.
+6. Siapkan struktur antarmuka:
+   - Navbar:
+     - Tampilkan nama dashboard dan menu logout.
+   - Sidebar:
+     - Tampilkan menu navigasi ke halaman-halaman yang tersedia.
+     - Sesuaikan tampilan untuk desktop dan mobile menggunakan CSS.
+   - Konten Utama:
+     - Tampilkan tabel data pelanggan dalam bentuk tabel responsif.
+7. Tambahkan tombol logout yang mengarahkan pengguna ke `logout.php` jika diklik.
+Akhiri
+*/
+
 session_start(); 
 if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
